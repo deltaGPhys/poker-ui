@@ -1,0 +1,51 @@
+<div
+     style="top:calc({{player.s.location.y}}% - {{height/2}}px);
+     left:calc({{player.s.location.x}}% - {{width/2}}px);
+     width:{{width}}px;
+     height:{{height}}px;"
+     [ngClass]="{
+      'filled': player.s.state !== 'EMPTY',
+      'filled-hover': player.s.state !== 'EMPTY' && game.s.state === 'CHOOSE_BUTTON',
+      'empty': player.s.state === 'EMPTY',
+      'busted': player.s.state === 'COMPLETE',
+      'winner': player.s.state === 'COMPLETE' && player.s.finalRank === 1
+      }"
+      (click)="chooseButton()"
+>
+
+  @if (player.s.state !== "EMPTY") {
+    {{player.s.name}}
+  } @else {
+    <app-add-player-component [player]="player"></app-add-player-component>
+  }
+
+  @if (player.s.state === "PLAYING") {
+    <span class="fa-stack fa-1x busted-button" (click)="bustPlayer()">
+      <i class="fas fa-circle fa-stack-2x" style="color:orangered"></i>
+      <i class="fas fa-skull fa-stack-1x"></i>
+    </span>
+  }
+
+  @if (player.s.state === 'COMPLETE') {
+    <div class="rank-badge" [ngClass]="{'bronze': player.s.finalRank === 3, 'silver': player.s.finalRank === 2, 'gold': player.s.finalRank === 1, 'blue': player.s.finalRank > 3}">
+      {{player.s.finalRank}}
+    </div>
+  }
+
+  @if ((player.s.state === "PLAYING" || player.s.state === "COMPLETE") && (player.s.position === 'BUTTON' || player.s.position === 'BUTTON-SMALL_BLIND') && game.s.state === "PLAYING") {
+    <div class="button">
+      D
+    </div>
+  }
+  @if ((player.s.state === "PLAYING" || player.s.state === "COMPLETE") && player.s.position === 'BIG_BLIND' && game.s.state === "PLAYING") {
+    <div class="bb">
+      BB
+    </div>
+  }
+  @if ((player.s.state === "PLAYING" || player.s.state === "COMPLETE") && (player.s.position === "SMALL_BLIND" || player.s.position === "BUTTON-SMALL_BLIND") && game.s.state === "PLAYING") {
+    <div class="sb">
+      SB
+    </div>
+  }
+</div>
+

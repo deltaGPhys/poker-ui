@@ -1,0 +1,25 @@
+<div class="list-container">
+  <div class="header">
+    RESULTS
+  </div>
+  @for(player of players; track player.s.location.number) {
+    @if (player.s.state === 'COMPLETE') {
+      <div class="player">
+        <div class="name">
+          {{player.s.name}}
+        </div>
+        <div class="place">
+          @if (player.s.finalRank < 4) {
+            <div class="rank-badge" [ngClass]="{'gold': player.s.finalRank === 1, 'silver': player.s.finalRank === 2, 'bronze': player.s.finalRank === 3}">
+              {{player.s.finalRank}}
+            </div>
+          } @else {
+            {{player.s.finalRank}}
+          }
+
+        </div>
+      </div>
+
+    }
+  }
+</div>

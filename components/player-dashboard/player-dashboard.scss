@@ -1,0 +1,159 @@
+.filled {
+  background-color: #FFF;
+  color: black;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 4px solid black;
+  border-radius: 15px;
+  z-index: 20;
+}
+
+.filled-hover:hover {
+  background-color: #1B73BB;
+  color: white;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: x-large;
+  cursor: pointer;
+ }
+
+.empty {
+  color: black;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #444;
+  border: 4px solid dimgray;
+  border-radius: 15px;
+}
+
+.button {
+  color: black;
+  background-color: white;
+  border: 1px solid black;
+  font-size: x-large;
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+  position: absolute;
+  top: 40px;
+  right: 83px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  z-index: 50;
+}
+
+.sb {
+  color: black;
+  background-color: darkkhaki;
+  border: 1px solid black;
+  font-size: large;
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+  position: absolute;
+  top: 40px;
+  left: 83px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  z-index: 50;
+}
+
+.bb {
+  color: black;
+  background-color: cornflowerblue;
+  border: 1px solid black;
+  font-size: large;
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+  position: absolute;
+  top: 40px;
+  left: 83px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  z-index: 50;
+}
+
+
+.busted {
+  background-color: maroon;
+  color: white;
+}
+
+.winner {
+  background-color: darkgreen;
+  color: white;
+}
+
+.busted-button {
+  position: absolute;
+  top: -20px;
+  right: 80px;
+  z-index: 50;
+}
+
+
+.rank-number {
+  color: white;
+}
+
+.rank-badge {
+  color: black;
+  font-size: x-large;
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+  position: absolute;
+  top: -20px;
+  left: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  z-index: 50;
+}
+
+.blue {
+  background-color: dodgerblue;
+}
+
+.bronze {
+  background-color: #967444;
+  border: 2px solid white;
+}
+
+.silver {
+  background-color: #C0C0C0;
+  border: 2px solid white;
+}
+
+.gold {
+  background-color: #C5B358;
+  border: 2px solid white;
+}
+
+
+// top betting line: 30%
+// bottom betting line: 70%
+// left inside: 17%
+// right inside: 83%
+// left top curve start: 30% top/28% left
+// right top curve start: 30% top/72% left
+// left bottom curve start: 70% top/28% left
+// right bottom curve start: 70% top/72% left
+//
+// rectangle: 66% long, 40% tall
+// ends: 20% radius, center at 50%,17%/83%
+// perimeter: 258%

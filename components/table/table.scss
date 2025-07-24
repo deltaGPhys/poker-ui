@@ -1,0 +1,51 @@
+.table {
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#felt {
+  width: 90%;
+}
+
+.start-button {
+  height: 60px;
+  background-color: darkgreen;
+  color: white;
+  border: 6px solid white;
+  border-radius: 15px;
+  font-size: large;
+  position: fixed;
+  top: 45%;
+  left: 42%;
+  padding: 10px;
+}
+
+.next-button {
+  height: 60px;
+  background-color: #1B73BB;
+  color: white;
+  border: 6px solid white;
+  border-radius: 15px;
+  font-size: large;
+  position: fixed;
+  top: 45%;
+  left: 45%;
+  padding: 10px;
+}
+
+.next-hand-button {
+  height: 60px;
+  background-color: #1B73BB;
+  color: white;
+  border: 6px solid white;
+  border-radius: 15px;
+  font-size: large;
+  position: fixed;
+  top: 50%;
+  left: 60%;
+  padding: 10px;
+}

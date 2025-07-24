@@ -1,0 +1,35 @@
+<div class="table">
+
+  @for(player of players; track player.s.location) {
+    @if ((game.s.state === "SETUP" || player.s.state !== "EMPTY") && game.s.state !== "COMPLETE") {
+      <app-player-dashboard [player]=player [game]="game" (buttonChosen)="enterBlindPhase(player)"></app-player-dashboard>
+    }
+  }
+  <img src="table2.jpg" id="felt" />
+
+  @if (game.s.state === "SETUP" && activePlayerCount >=2) {
+    <button (click)="enterButtonPhase()" class="next-button">NEXT</button>
+  }
+
+  @if (game.s.state === "CHOOSE_BUTTON") {
+    <button [disabled]="true" class="start-button">SELECT BUTTON</button>
+  }
+
+  @if (["PLAYING", "SET_BLINDS"].includes(game.s.state)) {
+    <app-blind-component [game]="game" (blindsReady)="startGame()"></app-blind-component>
+  }
+
+  @if (game.s.state === "PLAYING") {
+    <button class="next-hand-button" (click)="nextHand()">NEXT HAND</button>
+  }
+
+  @if (game.s.state === "COMPLETE") {
+    <app-results-table-component></app-results-table-component>
+  }
+
+
+
+</div>
+
+
+

@@ -1,0 +1,18 @@
+@import '../../app.scss';
+
+.player-add-form {
+  padding: 10px;
+  background-color: #cccccc;
+  border: 4px solid black;
+  border-radius: 15px;
+  position: fixed;
+  top: 40%;
+  left: 25%;
+}
+
+.add-button {
+  color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

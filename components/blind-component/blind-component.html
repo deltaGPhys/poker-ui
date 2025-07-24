@@ -1,0 +1,22 @@
+<div class="blind-container">
+  @if (game.s.state === "SET_BLINDS") {
+    <div class="blind-top">
+      <div class="blinds">
+        {{Math.round(bigBlind/2)}} / &nbsp;<input class="bbInput" [(ngModel)]="bigBlind"/>
+      </div>
+      <button (click)="setBlinds()">START</button>
+    </div>
+  }
+  @if (game.s.state === "PLAYING") {
+    <div class="blind-top">
+      <div class="blinds">
+        {{bigBlind/2}}/{{bigBlind}}
+      </div>
+      <button class="raise-blinds" (click)="increaseBlinds()">+</button>
+    </div>
+    <div class="avg-stack">
+      Average Stack: {{Math.round(averageStack)}} ({{Math.round(averageStack/bigBlind)}} BB)
+    </div>
+  }
+
+</div>

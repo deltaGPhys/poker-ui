@@ -1,0 +1,18 @@
+@if (!toggle) {
+  <div class="add-button">
+    <button (click)="addPlayer()">+</button>
+  </div>
+} @else {
+  <div class="player-add-form">
+    <form id="objectForm" [formGroup]="playerForm" (ngSubmit)="onSubmit()">
+      <div class="form-group form-floating">
+        <input type="text" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['name'].errors }" placeholder="."/>
+        <label>Player Name</label>
+        <div *ngIf="f['name'].errors && f['name'].touched" class="invalid-feedback">
+          <div *ngIf="f['name'].errors['required']">Name is required</div>
+        </div>
+      </div>
+      <button type="submit">Add</button>
+    </form>
+  </div>
+}
